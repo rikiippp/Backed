@@ -1,0 +1,12 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "productManager.js",
+  "scripts": {
+    "start": "node productManager.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
