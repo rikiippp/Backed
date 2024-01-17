@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "nombre": "Aparador de madera",
+    "precio": 139,
+    "cantidad": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Lampara diamante",
+    "precio": 12,
+    "cantidad": 1
+  },
+  {
+    "id": 3,
+    "nombre": "Silla comedor",
+    "precio": 21,
+    "cantidad": 1
+  },
+  {
+    "id": 4,
+    "nombre": "Sillon de tela",
+    "precio": 230,
+    "cantidad": 1
+  },
+  {
+    "id": 5,
+    "nombre": "Escritorio moderno",
+    "precio": 112,
+    "cantidad": 1
+  },
+  {
+    "id": 6,
+    "nombre": "Luces Led",
+    "precio": 19,
+    "cantidad": 1
+  },
+  {
+    "id": 7,
+    "nombre": "Sillon Uniplaza",
+    "precio": 43,
+    "cantidad": 1
+  },
+  {
+    "id": 8,
+    "nombre": "Silla Bar",
+    "precio": 23,
+    "cantidad": 1
+  },
+  {
+    "id": 9,
+    "nombre": "Zuculentas",
+    "precio": 16,
+    "cantidad": 1
+  },
+  {
+    "id": 10,
+    "nombre": "Aloe Vera",
+    "precio": 14,
+    "cantidad": 1
+  }
+]
