@@ -119,16 +119,5 @@
     "category": "Exterior",
     "stock": 4,
     "quantity": 1
-  },
-  {
-    "id": 12,
-    "title": "Maceta blanca",
-    "description": "descripcion del producto %&//%&",
-    "code": "32525",
-    "price": 18,
-    "status": true,
-    "category": "Exterior",
-    "stock": 5,
-    "quantity": 1
   }
 ]
