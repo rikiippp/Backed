@@ -1,5 +1,6 @@
 # Ignorar la carpeta node_modules
 node_modules/
+src/public/
 
 # Ignorar el archivo productManagerOld.js
 productManagerOld.js

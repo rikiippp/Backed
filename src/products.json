@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "Aparador de madera",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "123",
+    "price": 139,
+    "status": true,
+    "category": "Muebles",
+    "stock": 5,
+    "quantity": 1
+  },
+  {
+    "id": 2,
+    "title": "Lampara diamante",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "1234",
+    "price": 12,
+    "status": true,
+    "category": "Luces",
+    "stock": 5,
+    "quantity": 1
+  },
+  {
+    "id": 3,
+    "title": "Silla comedor",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "1235",
+    "price": 21,
+    "status": true,
+    "category": "Sillas",
+    "stock": 5,
+    "quantity": 1
+  },
+  {
+    "id": 4,
+    "title": "Sillon de tela",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "1236",
+    "price": 230,
+    "status": true,
+    "category": "Sillas",
+    "stock": 5,
+    "quantity": 1
+  },
+  {
+    "id": 5,
+    "title": "Escritorio moderno",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "1237",
+    "price": 112,
+    "status": true,
+    "category": "Muebles",
+    "stock": 5,
+    "quantity": 1
+  },
+  {
+    "id": 6,
+    "title": "Luces Led",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "1238",
+    "price": 19,
+    "status": true,
+    "category": "Luces",
+    "stock": 5,
+    "quantity": 1
+  },
+  {
+    "id": 7,
+    "title": "Sillon Uniplaza",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "1239",
+    "price": 43,
+    "status": true,
+    "category": "Sillas",
+    "stock": 5,
+    "quantity": 1
+  },
+  {
+    "id": 8,
+    "title": "Silla Bar",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "12310",
+    "price": 23,
+    "status": true,
+    "category": "Sillas",
+    "stock": 5,
+    "quantity": 1
+  },
+  {
+    "id": 9,
+    "title": "Zuculentas",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "12311",
+    "price": 16,
+    "status": true,
+    "category": "Plantas",
+    "stock": 5,
+    "quantity": 1
+  },
+  {
+    "id": 10,
+    "title": "Aloe Vera",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "12312",
+    "price": 14,
+    "status": true,
+    "category": "Plantas",
+    "stock": 5,
+    "quantity": 1
+  },
+  {
+    "id": 11,
+    "title": "Macetas blancas",
+    "description": "description del producto $#%&",
+    "code": "14551",
+    "price": 28,
+    "status": true,
+    "category": "Exterior",
+    "stock": 4,
+    "quantity": 1
+  },
+  {
+    "id": 12,
+    "title": "Maceta blanca",
+    "description": "descripcion del producto %&//%&",
+    "code": "32525",
+    "price": 18,
+    "status": true,
+    "category": "Exterior",
+    "stock": 5,
+    "quantity": 1
+  }
+]

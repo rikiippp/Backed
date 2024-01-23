@@ -116,9 +116,6 @@ class ProductManager {
 
             return this.products[index];
         }
-
-        console.log(`\nNo se encontró un producto con ID ${productId} para actualizar`);
-        return null;
     }
 
     // Método público asincrónico para eliminar un producto
