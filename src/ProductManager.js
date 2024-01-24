@@ -29,15 +29,13 @@ class ProductManager {
     async getProductById(productId) {
         try {
             await this.loadProducts();
-            const product = this.products.find(p => p.id === productId);
+            const product = this.products.find(p => p.id === parseInt(productId, 10));
             if (!product) {
-                console.log(`\nNo se encontró un producto con ID ${productId}`);
+                // console.log(`\nNo se encontró un producto con ID ${productId}`);
                 return null;
             }
-
-            console.log(`\n¡Producto encontrado con ID ${productId}!`);
-            console.log(product);
-
+            // console.log(`\n¡Producto encontrado con ID ${productId}!`);
+            // console.log(product);
             return product;
         } catch (error) {
             throw error;
@@ -68,7 +66,7 @@ class ProductManager {
                 // Guarda los productos en el archivo después de la eliminación
                 await this.saveProducts();
 
-                console.log(`\nProducto con ID ${productId} eliminado correctamente`);
+                // console.log(`\nProducto con ID ${productId} eliminado correctamente`);
             } else {
                 console.log(`\nNo se encontró un producto con ID ${productId}`);
             }
@@ -90,17 +88,15 @@ class ProductManager {
 
                 // Guardo los productos
                 await this.saveProducts();
-
-                console.log(`\n¡Producto actualizado con ID ${productId}!`);
-                console.log(this.products[index]);
-
+                // console.log(`\n¡Producto actualizado con ID ${productId}!`);
+                // console.log(this.products[index]);
                 return { success: true, product: this.products[index] };
             } else {
                 // Devuelve un objeto indicando el fallo y un mensaje de error
                 return { success: false, error: `No se encontró un producto con ID ${productId}` };
             }
         } catch (error) {
-            console.error('Error al actualizar el producto:', error.message);
+            // console.error('Error al actualizar el producto:', error.message);
             return { success: false, error: 'Error al actualizar el producto' };
         }
     }

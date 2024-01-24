@@ -111,13 +111,13 @@
   },
   {
     "id": 11,
-    "title": "Macetas blancas",
-    "description": "description del producto $#%&",
-    "code": "14551",
-    "price": 28,
+    "title": "Ceramica decorativa",
+    "description": "descripcion del producto %&//%&",
+    "code": "1414gaw1",
+    "price": 38,
     "status": true,
-    "category": "Exterior",
-    "stock": 4,
+    "category": "Decoracion",
+    "stock": 5,
     "quantity": 1
   }
 ]

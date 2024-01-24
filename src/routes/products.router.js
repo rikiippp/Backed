@@ -1,5 +1,4 @@
 import express from 'express';
-const router = express.Router();
 import ProductManager from "../ProductManager.js";
 
 import path from 'path';
@@ -15,6 +14,9 @@ const srcDirectory = path.join(__dirname, '..');
 const filePath = path.join(srcDirectory, 'products.json');
 const productManager = new ProductManager(filePath);
 
+
+const router = express.Router();
+
 // ENDPOINTS
 router.get('/api/products', async (req, res) => {
     try {
@@ -24,10 +26,8 @@ router.get('/api/products', async (req, res) => {
         if (limit) {
             products = products.slice(0, limit);
         }
-
-        console.log(`\n** Productos Iniciales (con límite ${limit || 'ninguno'}) **`);
-        console.log(products);
-
+        // console.log(`\n** Productos Iniciales (con límite ${limit || 'ninguno'}) **`);
+        // console.log(products);
         res.json(products);
     } catch (error) {
         res.status(500).json({ error: 'Error al obtener productos' });
@@ -40,9 +40,8 @@ router.get('/api/products/:pid', async (req, res) => {
         const product = await productManager.getProductById(productId);
 
         if (product) {
-            console.log(`\n** Producto encontrado con ID ${productId} **`);
-            console.log(product);
-
+            // console.log(`\n** Producto encontrado con ID ${productId} **`);
+            // console.log(product);
             res.json(product);
         } else {
             res.status(404).json({ error: `No se encontró un producto con ID ${productId}` });
@@ -129,8 +128,6 @@ router.put('/api/products/:pid', async (req, res) => {
 router.delete('/api/products/:pid', async (req, res) => {
     try {
         const productId = parseInt(req.params.pid);
-
-        console.log('productId:', productId); // Agrega esta línea para verificar el valor
 
         // Llama a la función deleteProduct para eliminar el producto
         await productManager.deleteProduct(productId);

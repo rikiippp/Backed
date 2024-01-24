@@ -1,5 +1,6 @@
 import express from 'express'
 import productsRoute from './routes/products.router.js'
+import cartRouter from './routes/cart.router.js'
 
 const server = express()
 const PORT = 8080
@@ -9,7 +10,9 @@ server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 
 //ENDPOINTS
-server.use('/', productsRoute)
+server.use('/', productsRoute);
+server.use('/', cartRouter)
+
 
 
 
