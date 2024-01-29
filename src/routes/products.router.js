@@ -1,17 +1,14 @@
 import express from 'express';
-import ProductManager from "../ProductManager.js";
+import ProductManager from "../Controllers/ProductManager.js";
 
+// Rutas para acceder a products.json 
 import path from 'path';
 import { fileURLToPath } from 'url';
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Construi la ruta al directorio 'src'
-const srcDirectory = path.join(__dirname, '..');
-
 // Construi la ruta al archivo 'products.json' dentro de 'src'
-const filePath = path.join(srcDirectory, 'products.json');
+const filePath = path.join(__dirname, '..', 'Models', 'products.json');
 const productManager = new ProductManager(filePath);
 
 
