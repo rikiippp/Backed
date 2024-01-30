@@ -61,7 +61,7 @@ class ProductManager {
 
     async deleteProduct(productId) {
         try {
-            // Leo los productos 
+            // Lee los productos 
             await this.loadProducts();
 
             // Filtro los productos, excluyendo aquellos con el ID a eliminar
@@ -74,7 +74,8 @@ class ProductManager {
                 // Guarda los productos en el archivo después de la eliminación
                 await this.saveProducts();
 
-                // console.log(`\nProducto con ID ${productId} eliminado correctamente`);
+                // Emitir actualización después de la eliminación
+                io.emit('update-products', await this.getProducts());
             } else {
                 console.log(`\nNo se encontró un producto con ID ${productId}`);
             }

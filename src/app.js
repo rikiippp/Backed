@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import handlebars from 'express-handlebars';
+import { createServer } from 'http';
 import { Server } from 'socket.io';
 
 //lOGIC
@@ -12,7 +13,8 @@ import viewsRouter from './routes/views.router.js';
 
 const app = express()
 const PORT = 8080
-const httpServer = app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`))
+const httpServer = createServer(app);
+// const io = new Server(httpServer);
 
 // Obtén el directorio actual
 const __filename = fileURLToPath(import.meta.url);
@@ -43,13 +45,8 @@ app.use('/', viewsRouter);
 //Obtengo todos los productos atraves de home.handlebars
 app.get('/', async (req, res) =>{
     let allProducts = await productManager.getProducts()
-    res.render('home',{
-        page: 'Home',
-        products: allProducts
-    })
-})
-
-socketServer.on('connection', async socket => {
-    console.log('New connection');
-    
+    res.render('home',{ page: 'Home', products: allProducts})
 });
+
+
+httpServer.listen(PORT, () => console.log(`Server running on PORT ${PORT}`))
