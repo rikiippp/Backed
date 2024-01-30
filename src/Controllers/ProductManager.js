@@ -1,4 +1,10 @@
 import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Obtén el directorio actual
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 class ProductManager {
     constructor(filePath) {
@@ -9,11 +15,13 @@ class ProductManager {
 
     async loadProducts() {
         try {
-            const data = await fs.readFile(this.path, 'utf8');
+            // Construye la ruta al archivo 'products.json' dentro de la carpeta 'models'
+            const filePath = path.join(__dirname, '../models/products.json');
+            const data = await fs.readFile(filePath, 'utf-8');
             this.products = JSON.parse(data);
         } catch (error) {
             console.error('Error al cargar productos desde el archivo:', error.message);
-            throw error; // Propagar el error para que pueda ser manejado en la capa superior
+            throw error;
         }
     }
 

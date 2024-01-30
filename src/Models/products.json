@@ -112,7 +112,7 @@
   {
     "id": 11,
     "title": "Ceramica decorativa",
-    "description": "descripcion del producto %&//%&",
+    "description": "Descripcion del producto %&//%&",
     "code": "1414gaw1",
     "price": 38,
     "status": true,
@@ -120,4 +120,5 @@
     "stock": 5,
     "quantity": 1
   }
+
 ]

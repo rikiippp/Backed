@@ -1,12 +1,12 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import CartManager from '../Controllers/CartManager.js';
+import CartManager from '../controllers/CartManager.js';
 
 // Ruta para acceder a mi cart.json
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const cartsFilePath = path.join(__dirname, '..', 'Models', 'carts.json');
+const cartsFilePath = path.join(__dirname, '..', 'models', 'carts.json');
 const cartManager = new CartManager(cartsFilePath);
 
 const router = express.Router();

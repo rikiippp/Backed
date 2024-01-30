@@ -1,5 +1,5 @@
 import express from 'express';
-import ProductManager from "../Controllers/ProductManager.js";
+import ProductManager from "../controllers/ProductManager.js";
 
 // Rutas para acceder a products.json 
 import path from 'path';
@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Construi la ruta al archivo 'products.json' dentro de 'src'
-const filePath = path.join(__dirname, '..', 'Models', 'products.json');
+const filePath = path.join(__dirname, '..', 'models', 'products.json');
 const productManager = new ProductManager(filePath);
 
 
@@ -78,8 +78,8 @@ router.post('/api/products', async (req, res) => {
             stock,
             quantity: 1
         };
-
         await productManager.addProduct(newProduct);
+
         res.status(201).json({ message: 'Producto agregado correctamente', product: newProduct });
     } catch (error) {
         console.error(error);
