@@ -7,25 +7,29 @@
         <h2>{{this.title}}</h2>
         <p>{{this.description}}</p>
         <span>${{this.price}}</span>
-        <button onclick="deleteProduct('{{this.id}}')" class="btn-delete">Eliminar Producto</button>
+        <button onclick="deleteProduct('{{this.id}}')" class="btn">Remove</button>
     </div>
     {{/each}}
 </div>
 
 
 <form id="add-product-form" class="form-add-product" action="/realtimeproducts" method="post">
+    <h2>Add new Product</h2>
     <input type="text" id="product-title" placeholder="Title" required>
     <input type="text" id="product-description" placeholder="Description" required>
     <input type="number" id="product-price" placeholder="Price" required>
     <input type="number" id="product-stock" placeholder="Stock" required>
     <input type="text" id="product-category" placeholder="Category" required>
-    <button type="submit" class="btn-add">Agregar Producto</button>
+    <button type="submit" class="btn">Add Product</button>
 </form>
 
-<a href="/">Volver al inicio</a>
+<div class="link">
+<a href="/">Back to Homepage</a>
+</div>
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
+
     const socket = io();
 
     socket.on('update-products', (products) => {

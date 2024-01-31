@@ -1,14 +1,23 @@
 body {
     background-color: #faebd7;
 }
+
 .title {
     text-align: center;
 }
+
+.link {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
 .products-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .card-product-item {
     border: 2px solid #f5dbb8;
     border-radius: 5px;
@@ -35,16 +44,26 @@ body {
     font-weight: bold;
     color: green;
 }
-/* BTN DELETE PRODUCT */
-.btn-delete {
+
+/* BTN */
+.btn {
     border-radius: 5px;
-}
-/* btn ADD PRODUCT */
-.btn-add{
-    border-radius: 5px;
-}
-/* FORMULARIO */
-.form-add-product {
-    color: aqua;
+    padding: 5px;
+    margin-top: 15px;
 }
 
+/* FORMULARIO */
+.form-add-product {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 15px;
+    margin: auto;
+}
+.form-add-product h2 {
+    text-align: center;
+}
+
+.form-add-product input {
+    padding: 5px;
+}

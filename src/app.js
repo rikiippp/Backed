@@ -49,7 +49,7 @@ app.get('/', async (req, res) =>{
 });
 
 io.on('connection', async (socket) => {
-    console.log('Un usuario se ha conectado');
+    console.log('A User has logged in');
 
     socket.on('new-product', async ({ title, description, code, price, stock, category }) => {
         console.log('Recibido evento new-product');
