@@ -1,11 +1,14 @@
 <h1 class="title">Our products</h1>
 
+<div class="products-container">
 {{#each products}}
-<div class="card">
-    <h2>{{this.title}}</h2>
-    <p>{{this.description}}</p>
-    <span>${{this.price}}</span>
-</div>
+    <div class="card-product-item">
+        <h2>{{this.title}}</h2>
+        <p>{{this.description}}</p>
+        <span>${{this.price}}</span>
+    </div>
 {{/each}}
+</div>
+
 <a href="/realtimeproducts">Ver Productos en Tiempo Real</a>
 

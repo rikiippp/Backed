@@ -47,17 +47,59 @@
 
     document.getElementById('add-product-form').addEventListener('submit', async (event) => {
         event.preventDefault();
-        const title = document.getElementById('product-title').value;
-        const description = document.getElementById('product-description').value;
-        const code = Date.now().toString(30);
-        const price = document.getElementById('product-price').value;
-        const stock = document.getElementById('product-stock').value;
-        const category = document.getElementById('product-category').value;
 
-        const newProduct = { title, description, code, price, stock, category };
+        const titleInput = document.getElementById('product-title');
+        const descriptionInput = document.getElementById('product-description');
+        const priceInput = document.getElementById('product-price');
+        const stockInput = document.getElementById('product-stock');
+        const categoryInput = document.getElementById('product-category');
 
-        // Enviar el nuevo producto al servidor
+        // Validaciones
+        if (!titleInput.value || !descriptionInput.value || !priceInput.value || !stockInput.value || !categoryInput.value) {
+            alert('Por favor, complete todos los campos.');
+            return;
+        }
+
+        const price = parseFloat(priceInput.value);
+        const stock = parseInt(stockInput.value);
+
+        if (isNaN(price) || isNaN(stock) || price < 1 || stock < 0) {
+            alert('Ingrese valores válidos para Precio o Stock.');
+            return;
+        }
+
+        // Valido que la category no contenga números
+        const categoryRegex = /^[^\d]+$/;
+        if (!categoryRegex.test(categoryInput.value)) {
+            alert('El campo "Category" no debe contener números.');
+            return;
+        }
+
+        // Valido que el títle no contenga números
+        const titleRegex = /^[^\d]+$/;
+        if (!titleRegex.test(titleInput.value)) {
+            alert('El campo "Title" no debe contener números.');
+            return;
+        }
+
+        const newProduct = {
+            title: titleInput.value,
+            description: descriptionInput.value,
+            code: Date.now().toString(30),
+            price: price,
+            stock: stock,
+            category: categoryInput.value
+        };
+
+        // Envio el nuevo producto al servidor
         socket.emit('new-product', newProduct);
+
+        // Limpio los campos del formulario
+        titleInput.value = '';
+        descriptionInput.value = '';
+        priceInput.value = '';
+        stockInput.value = '';
+        categoryInput.value = '';
     });
 
     function deleteProduct(productId) {

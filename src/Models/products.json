@@ -119,5 +119,14 @@
     "category": "Decoracion",
     "stock": 5,
     "quantity": 1
+  },
+  {
+    "id": 12,
+    "title": "Maceta Voladora",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "2i152ifqa",
+    "price": 24,
+    "stock": 5,
+    "category": "Exterior"
   }
 ]
