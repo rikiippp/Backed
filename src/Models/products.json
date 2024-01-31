@@ -133,8 +133,17 @@
     "id": 13,
     "title": "Maceta Voladora",
     "description": "Descripcion del producto !#$!%!",
-    "code": "2i14pconc",
-    "price": "34",
+    "code": "2i14q5fai",
+    "price": "45",
+    "stock": "5",
+    "category": "Exterior"
+  },
+  {
+    "id": 14,
+    "title": "Maceta Voladora",
+    "description": "Descripcion del producto !#$!%!",
+    "code": "2i14q6do6",
+    "price": "45",
     "stock": "5",
     "category": "Exterior"
   }
