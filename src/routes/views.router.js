@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
 
     socket.on('new-product', async ({ title, description, code, price, stock, category }) => {
         const newProduct = {
-            id: Math.floor(Math.random() * 1000), // Genera un ID aleatorio (puedes usar un método más robusto)
+            id: Math.floor(Math.random() * 1000),
             title,
             description,
             code,
