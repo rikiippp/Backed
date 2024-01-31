@@ -4,14 +4,19 @@ body {
 .title {
     text-align: center;
 }
-
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .card-product-item {
     border: 2px solid #f5dbb8;
     border-radius: 5px;
     padding: 16px;
     margin: 16px;
     max-width: 300px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-product-item h2 {

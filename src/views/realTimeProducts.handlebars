@@ -1,13 +1,17 @@
 <h1 class="title">Products in real time</h1>
 
-{{#each products}}
-<div class="card-product-item">
-    <h2>{{this.title}}</h2>
-    <p>{{this.description}}</p>
-    <span>${{this.price}}</span>
-    <button onclick="deleteProduct('{{this.id}}')" class="btn-delete">Eliminar Producto</button>
+<div id="card-products-container" class="products-container">
+
+    {{#each products}}
+    <div class="card-product-item">
+        <h2>{{this.title}}</h2>
+        <p>{{this.description}}</p>
+        <span>${{this.price}}</span>
+        <button onclick="deleteProduct('{{this.id}}')" class="btn-delete">Eliminar Producto</button>
+    </div>
+    {{/each}}
 </div>
-{{/each}}
+
 
 <form id="add-product-form" class="form-add-product" action="/realtimeproducts" method="post">
     <input type="text" id="product-title" placeholder="Title" required>
@@ -25,20 +29,21 @@
     const socket = io();
 
     socket.on('update-products', (products) => {
-        const productListArray = document.querySelectorAll('.card-product-item');
+        const productsContainer = document.getElementById('card-products-container');
+        productsContainer.innerHTML = '';
 
-        productListArray.forEach((product, index) => {
-            if (products[index]) {
-                product.innerHTML = `
-                <h2>${products[index].title}</h2>
-                <p>${products[index].description}</p>
-                <span>$${products[index].price}</span>
-                <button onclick="deleteProduct('${products[index].id}')" class="btn-delete">Eliminar Producto</button>
+        products.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.classList.add('card-product-item');
+            productElement.innerHTML = `
+                <h2>${product.title}</h2>
+                <p>${product.description}</p>
+                <span>$${product.price}</span>
+                <button onclick="deleteProduct('${product.id}')" class="btn-delete">Eliminar Producto</button>
             `;
-            }
+            productsContainer.appendChild(productElement);
         });
     });
-
 
     document.getElementById('add-product-form').addEventListener('submit', async (event) => {
         event.preventDefault();
