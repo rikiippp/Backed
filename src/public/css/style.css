@@ -5,7 +5,7 @@ body {
     text-align: center;
 }
 
-.card {
+.card-product-item {
     border: 2px solid #f5dbb8;
     border-radius: 5px;
     padding: 16px;
@@ -14,19 +14,32 @@ body {
     display: inline-block;
 }
 
-.card h2 {
+.card-product-item h2 {
     font-size: 20px;
     font-weight: bold;
     padding: 0;
     margin: 0;
 }
 
-.card p {
+.card-product-item p {
     font-size: 14px;
 }
 
-.card span {
+.card-product-item span {
     font-size: 16px;
     font-weight: bold;
     color: green;
 }
+/* BTN DELETE PRODUCT */
+.btn-delete {
+    border-radius: 5px;
+}
+/* btn ADD PRODUCT */
+.btn-add{
+    border-radius: 5px;
+}
+/* FORMULARIO */
+.form-add-product {
+    color: aqua;
+}
+

@@ -7,10 +7,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 class ProductManager {
-    constructor(filePath) {
+    constructor(filePath, io) {
         this.path = filePath;
         this.products = [];
         this.loadProducts();
+        this.io = io;
     }
 
     async loadProducts() {
@@ -61,21 +62,21 @@ class ProductManager {
 
     async deleteProduct(productId) {
         try {
-            // Lee los productos 
             await this.loadProducts();
 
             // Filtro los productos, excluyendo aquellos con el ID a eliminar
-            const updatedProducts = this.products.filter(p => p.id !== productId);
+            const updatedProducts = this.products.filter(p => p.id !== parseInt(productId, 10));
 
             // Verifica si algún producto fue eliminado
             if (updatedProducts.length < this.products.length) {
                 this.products = updatedProducts;
 
-                // Guarda los productos en el archivo después de la eliminación
                 await this.saveProducts();
 
                 // Emitir actualización después de la eliminación
-                io.emit('update-products', await this.getProducts());
+                if (this.io) {
+                    this.io.emit('update-products', await this.getProducts());
+                }
             } else {
                 console.log(`\nNo se encontró un producto con ID ${productId}`);
             }
